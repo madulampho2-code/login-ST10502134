@@ -1,14 +1,16 @@
+package com.mycompany.main;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
         
 public class Login {//beginning of class
     public boolean checkUserName(String username){
-     return username.contains("_");
- }
- public  boolean checkpasswordComplexity(String password){
+        return username.contains("_");
+    }
+
+ public     boolean checkpasswordComplexity(String password){//start of method 
      if (password.length() < 8){
          return false;
-     }
+     }//end of method
      boolean hasUpperCase = false;
   boolean hasSpecialChar = false;
   
@@ -18,7 +20,7 @@ public class Login {//beginning of class
  if (Character.isUpperCase(ch)) {
  hasUpperCase= true;
 }
-  if(!Character.isLetterOrDigit(ch)) {
+  if(Character.isLetterOrDigit(ch)) {//start of if stataement 
   hasSpecialChar = true;
 }
 }
@@ -32,11 +34,11 @@ public class Login {//beginning of class
  }
  public  String registerUser(String username,String password,String number){
      //Checking userName 
-     if(!checkUserName(username)){
+     if(checkUserName(username)){
          return "username must contain an underscore _";
      }
      //check password length
-    if(!checkpasswordComplexity(password)) {
+    if(checkpasswordComplexity(password)) {
         return "password must be atleast 8 characters long, include capital letters and a special character";
     } 
     return "Registraion Successfull";
